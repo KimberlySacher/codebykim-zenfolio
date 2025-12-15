@@ -1,53 +1,49 @@
-import { User, Users, Handshake, Check, ArrowRight, ArrowDown, ArrowUp, Languages } from "lucide-react";
+import { User, Users, Handshake, Check, ArrowRight, ArrowDown, ArrowUp } from "lucide-react";
 import { Button } from "./ui/button";
 
 const StepCircle = ({ number, filled = false }: { number: number; filled?: boolean }) => (
-  <div className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-medium ${
+  <div className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-medium ${
     filled 
       ? "bg-primary text-primary-foreground" 
-      : "border-2 border-foreground/30 text-foreground"
+      : "border border-foreground/30 text-foreground/70"
   }`}>
     {number}
   </div>
 );
 
 const IndependentProjects = () => (
-  <div className="space-y-6">
-    {/* Header pill */}
+  <div className="space-y-5">
     <div className="inline-flex items-center gap-2 border border-foreground/30 rounded-full px-4 py-2">
-      <User className="w-4 h-4" />
-      <span className="text-sm">Independent Projects</span>
+      <User className="w-4 h-4 text-foreground/70" />
+      <span className="text-sm font-light">Independent Projects</span>
     </div>
 
-    {/* Your Profile card */}
-    <div className="border border-primary/50 rounded-3xl p-6 bg-card/50">
-      <p className="text-sm">
-        <span className="font-semibold">Your Profile:</span> You have a project that needs to be built or completed.
+    <div className="border border-primary/40 rounded-2xl p-5 bg-primary/5">
+      <p className="text-sm font-light leading-relaxed">
+        <span className="font-medium">Your Profile:</span> You have a project that needs to be built or completed.
       </p>
     </div>
 
-    {/* My Part card */}
-    <div className="border border-primary rounded-3xl p-6 bg-primary/10">
-      <p className="text-sm mb-6">
-        <span className="font-semibold">My Part:</span> I analyse what you need and plan the next steps. I <span className="underline">take care of the entire process</span> and keep you updated regularly until everything is finished.
+    <div className="border border-primary/60 rounded-2xl p-5 bg-primary/10">
+      <p className="text-sm font-light leading-relaxed mb-5">
+        <span className="font-medium">My Part:</span> I analyse what you need and plan the next steps. I <span className="underline decoration-primary/50">take care of the entire process</span> and keep you updated regularly.
       </p>
       
-      {/* Progress steps */}
-      <div className="flex items-center gap-2">
-        <div className="w-10 h-10 rounded-full border-2 border-foreground/30 flex items-center justify-center">
-          <Handshake className="w-5 h-5" />
+      <div className="flex items-center gap-1.5 flex-wrap">
+        <div className="w-8 h-8 rounded-full border border-foreground/30 flex items-center justify-center">
+          <Handshake className="w-4 h-4 text-foreground/70" />
         </div>
-        <ArrowRight className="w-4 h-4 text-foreground/50" />
+        <ArrowRight className="w-3 h-3 text-foreground/40" />
         <StepCircle number={1} filled />
-        <ArrowRight className="w-4 h-4 text-foreground/50" />
+        <ArrowRight className="w-3 h-3 text-foreground/40" />
         <StepCircle number={2} filled />
-        <ArrowRight className="w-4 h-4 text-foreground/50" />
+        <ArrowRight className="w-3 h-3 text-foreground/40" />
         <StepCircle number={3} filled />
-        <ArrowRight className="w-4 h-4 text-foreground/50" />
+        <ArrowRight className="w-3 h-3 text-foreground/40" />
         <StepCircle number={4} filled />
-        <ArrowRight className="w-4 h-4 text-foreground/50" />
-        <div className="w-10 h-10 rounded-full border-2 border-foreground/30 flex items-center justify-center">
-          <Check className="w-5 h-5" />
+        <ArrowRight className="w-3 h-3 text-foreground/40" />
+        <div className="w-8 h-8 rounded-full border border-foreground/30 flex items-center justify-center">
+          <Check className="w-4 h-4 text-primary" />
         </div>
       </div>
     </div>
@@ -55,48 +51,44 @@ const IndependentProjects = () => (
 );
 
 const TeamIntegration = () => (
-  <div className="space-y-6">
-    {/* Header pill */}
+  <div className="space-y-5">
     <div className="inline-flex items-center gap-2 border border-foreground/30 rounded-full px-4 py-2">
-      <Users className="w-4 h-4" />
-      <span className="text-sm">Team Integration</span>
+      <Users className="w-4 h-4 text-foreground/70" />
+      <span className="text-sm font-light">Team Integration</span>
     </div>
 
-    {/* Your Profile card */}
-    <div className="border border-foreground/30 rounded-3xl p-6">
-      <p className="text-sm">
-        <span className="font-semibold">Your Profile:</span> You are starting a new project or already have one in progress and need support with specific parts.
+    <div className="border border-foreground/20 rounded-2xl p-5">
+      <p className="text-sm font-light leading-relaxed">
+        <span className="font-medium">Your Profile:</span> You are starting a new project or already have one in progress and need support with specific parts.
       </p>
     </div>
 
-    {/* My Part card */}
-    <div className="border border-foreground/30 rounded-3xl p-6">
+    <div className="border border-foreground/20 rounded-2xl p-5">
       <div className="flex gap-4">
-        <div className="flex flex-col items-center gap-2">
-          <div className="w-10 h-10 rounded-full border-2 border-foreground/30 flex items-center justify-center">
-            <Handshake className="w-5 h-5" />
+        <div className="flex flex-col items-center gap-1.5">
+          <div className="w-8 h-8 rounded-full border border-foreground/30 flex items-center justify-center">
+            <Handshake className="w-4 h-4 text-foreground/70" />
           </div>
-          <ArrowDown className="w-4 h-4 text-foreground/50" />
+          <ArrowDown className="w-3 h-3 text-foreground/40" />
           <StepCircle number={2} filled />
         </div>
-        <p className="text-sm flex-1">
-          <span className="font-semibold text-primary">My Part:</span> I <span className="underline">integrate smoothly into your workflow</span> and collaborate with your team. I provide clear, well-documented solutions and ensure good communication throughout the process.
+        <p className="text-sm font-light leading-relaxed flex-1">
+          <span className="font-medium text-primary">My Part:</span> I <span className="underline decoration-primary/50">integrate smoothly into your workflow</span> and collaborate with your team with clear communication.
         </p>
       </div>
       
-      {/* Progress steps */}
-      <div className="flex items-center gap-2 mt-6">
+      <div className="flex items-center gap-1.5 mt-5 flex-wrap">
         <StepCircle number={1} />
-        <div className="flex items-center gap-1">
-          <ArrowDown className="w-3 h-3 text-foreground/50" />
-          <ArrowUp className="w-3 h-3 text-foreground/50" />
+        <div className="flex items-center">
+          <ArrowDown className="w-3 h-3 text-foreground/40" />
+          <ArrowUp className="w-3 h-3 text-foreground/40" />
         </div>
         <StepCircle number={3} />
-        <ArrowRight className="w-4 h-4 text-foreground/50" />
+        <ArrowRight className="w-3 h-3 text-foreground/40" />
         <StepCircle number={4} />
-        <ArrowRight className="w-4 h-4 text-foreground/50" />
-        <div className="w-10 h-10 rounded-full border-2 border-foreground/30 flex items-center justify-center">
-          <Check className="w-5 h-5" />
+        <ArrowRight className="w-3 h-3 text-foreground/40" />
+        <div className="w-8 h-8 rounded-full border border-foreground/30 flex items-center justify-center">
+          <Check className="w-4 h-4 text-primary" />
         </div>
       </div>
     </div>
@@ -105,39 +97,29 @@ const TeamIntegration = () => (
 
 const MyApproach = () => {
   return (
-    <section className="min-h-screen relative overflow-hidden bg-background px-8 py-16">
-      {/* Language switcher top right */}
-      <div className="absolute top-8 right-8">
-        <Languages className="text-foreground/60 w-6 h-6" />
-      </div>
-
+    <section className="min-h-screen relative overflow-hidden bg-background px-8 py-24">
       <div className="container mx-auto max-w-6xl">
-        {/* Heading */}
-        <div className="mb-16">
-          <h2 className="text-6xl md:text-8xl font-light text-foreground mb-4">
+        <div className="mb-20">
+          <h2 className="text-6xl md:text-7xl lg:text-8xl font-extralight text-foreground tracking-tight">
             My Approach.
           </h2>
-          <p className="text-foreground/60 tracking-widest text-sm">
-            flexible - communicative - open
+          <p className="text-foreground/50 tracking-[0.2em] text-xs uppercase mt-4">
+            flexible · communicative · open
           </p>
         </div>
 
-        {/* Two column layout */}
-        <div className="grid md:grid-cols-2 gap-8 relative">
-          {/* Vertical divider */}
-          <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-foreground/20" />
-          
+        <div className="grid md:grid-cols-2 gap-12 md:gap-16 relative">
+          <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-foreground/10" />
           <IndependentProjects />
           <TeamIntegration />
         </div>
 
-        {/* Bottom CTA */}
-        <div className="mt-16 pt-8 border-t border-foreground/20 text-center">
-          <p className="text-foreground/80 mb-6">
-            Still not sure if it fits? Just contact me and we im very happy to talk about it!
+        <div className="mt-20 pt-10 border-t border-foreground/10 text-center">
+          <p className="text-foreground/50 font-light mb-6">
+            Still not sure if it fits? Let's talk about it!
           </p>
-          <Button variant="outline" className="rounded-full px-8">
-            CONTACT
+          <Button variant="outline" className="rounded-full px-8 py-5 text-xs tracking-[0.15em] uppercase border-foreground/30 hover:border-primary hover:text-primary">
+            Contact
           </Button>
         </div>
       </div>
