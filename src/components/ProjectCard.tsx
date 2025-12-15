@@ -5,7 +5,7 @@ interface ProjectCardProps {
 
 const ProjectCard = ({ title, className = "" }: ProjectCardProps) => {
   return (
-    <div className={`border-2 border-foreground/20 rounded-3xl p-6 hover:border-foreground/40 transition-colors duration-300 cursor-pointer ${className}`}>
+    <div className={`border border-primary/40 rounded-3xl p-6 hover:border-primary/70 transition-colors duration-300 cursor-pointer ${className}`}>
       <h3 className="text-foreground text-xl font-light">{title}</h3>
     </div>
   );
