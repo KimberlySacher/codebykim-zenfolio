@@ -1,3 +1,7 @@
+import { ArrowDown, Languages } from "lucide-react";
+import SkillsList from "./SkillsList";
+import { Button } from "./ui/button";
+
 const Hero = () => {
   return (
     <section className="min-h-screen relative overflow-hidden bg-background">
@@ -31,4 +35,42 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+const SkillsSection = () => {
+  return (
+    <section className="min-h-screen relative overflow-hidden bg-background px-8 py-16">
+      {/* Language switcher top right */}
+      <div className="absolute top-8 right-8">
+        <Languages className="text-foreground/60 w-6 h-6" />
+      </div>
+
+      {/* Main content */}
+      <div className="flex flex-col lg:flex-row items-center justify-center min-h-screen gap-12 lg:gap-24">
+        {/* Left side - Skills list */}
+        <div className="flex flex-col items-center">
+          <SkillsList />
+          
+          {/* My Approach */}
+          <div className="flex items-center gap-2 mt-8 text-foreground">
+            <ArrowDown className="w-4 h-4" />
+            <span className="text-sm font-light tracking-wider">MY APPROACH</span>
+          </div>
+        </div>
+        
+        {/* Right side - Projects heading */}
+        <div className="text-center lg:text-left">
+          <h2 className="text-6xl md:text-8xl lg:text-9xl font-light text-foreground mb-4">
+            Projects.
+          </h2>
+          <p className="text-foreground/80 font-light mb-6">
+            would love to learn even more!
+          </p>
+          <Button variant="outline" className="rounded-full px-8">
+            CONTACT
+          </Button>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export { Hero as default, SkillsSection };
