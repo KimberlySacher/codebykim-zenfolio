@@ -8,57 +8,50 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 215 20% 17%;
-    --foreground: 210 40% 98%;
+    --background: 0 0% 8%;
+    --foreground: 0 0% 98%;
 
-    --card: 215 25% 20%;
-    --card-foreground: 210 40% 98%;
+    --card: 0 0% 12%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 215 25% 20%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 0 0% 12%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 213 100% 60%;
-    --primary-foreground: 215 20% 17%;
+    --primary: 100 30% 60%;
+    --primary-foreground: 0 0% 8%;
 
-    --secondary: 215 15% 25%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 215 15% 25%;
-    --muted-foreground: 215 15% 65%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
 
-    --accent: 213 100% 60%;
-    --accent-foreground: 215 20% 17%;
+    --accent: 100 30% 60%;
+    --accent-foreground: 0 0% 8%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 215 15% 30%;
-    --input: 215 15% 25%;
-    --ring: 213 100% 60%;
+    --border: 0 0% 25%;
+    --input: 0 0% 15%;
+    --ring: 100 30% 60%;
 
-    --radius: 0.75rem;
+    --radius: 1.5rem;
 
     /* Portfolio specific design tokens */
-    --gradient-primary: linear-gradient(135deg, hsl(213 100% 60%), hsl(213 100% 70%));
-    --gradient-subtle: linear-gradient(180deg, hsl(215 20% 17%), hsl(215 25% 20%));
-    --glow-primary: 0 0 30px hsl(213 100% 60% / 0.3);
+    --gradient-primary: linear-gradient(135deg, hsl(100 30% 60%), hsl(100 30% 70%));
+    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 8%), hsl(0 0% 12%));
+    --glow-primary: 0 0 30px hsl(100 30% 60% / 0.3);
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-ring: 100 30% 60%;
   }
 
   .dark {
