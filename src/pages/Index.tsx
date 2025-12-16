@@ -4,10 +4,12 @@ import MyApproach from "@/components/MyApproach";
 import Education from "@/components/Education";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import CustomCursor from "@/components/CustomCursor";
 
 const Index = () => {
   return (
-    <main className="min-h-screen bg-background">
+    <main className="min-h-screen bg-background cursor-none">
+      <CustomCursor />
       <Hero />
       <Projects />
       <MyApproach />

@@ -1,4 +1,9 @@
 @tailwind base;
+
+/* Hide default cursor globally when custom cursor is active */
+.cursor-none, .cursor-none * {
+  cursor: none !important;
+}
 @tailwind components;
 @tailwind utilities;
 
