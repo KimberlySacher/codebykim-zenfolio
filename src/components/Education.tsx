@@ -5,9 +5,9 @@ const Education = () => {
         {/* Header */}
         <div className="flex flex-col md:flex-row items-start md:items-end gap-6 md:gap-12 mb-20">
           <div>
-            <p className="text-foreground/40 text-xs tracking-[0.2em] uppercase mb-2">Studiengang</p>
+            <p className="text-foreground/40 text-xs tracking-[0.2em] uppercase mb-2">Degree</p>
             <p className="text-foreground text-xl md:text-2xl font-light">
-              Medien-Informatik <span className="text-foreground/50">LMU</span>
+              Media Informatics <span className="text-foreground/50">– LMU Munich</span>
             </p>
           </div>
           <div className="hidden md:block h-12 w-px bg-foreground/20" />
@@ -18,9 +18,9 @@ const Education = () => {
 
         {/* Spectrum labels */}
         <div className="flex justify-between max-w-3xl mx-auto mb-6">
-          <span className="text-foreground/50 text-xs tracking-[0.15em] uppercase">Medien</span>
+          <span className="text-foreground/50 text-xs tracking-[0.15em] uppercase">Media</span>
           <div className="flex-1 mx-6 border-b border-foreground/20 self-center" />
-          <span className="text-foreground/50 text-xs tracking-[0.15em] uppercase">Informatik</span>
+          <span className="text-foreground/50 text-xs tracking-[0.15em] uppercase">Computer Science</span>
         </div>
 
         {/* Three column cards */}
@@ -29,7 +29,7 @@ const Education = () => {
             <ul className="space-y-3">
               <li className="text-foreground/80 font-light text-sm">Layouts</li>
               <li className="text-foreground/80 font-light text-sm">Heuristics</li>
-              <li className="text-foreground/80 font-light text-sm">Psychologie</li>
+              <li className="text-foreground/80 font-light text-sm">Psychology</li>
             </ul>
           </div>
 
@@ -44,11 +44,6 @@ const Education = () => {
             </ul>
           </div>
         </div>
-
-        {/* Script tagline */}
-        <p className="text-center text-3xl md:text-5xl font-script italic text-foreground/60 mt-20">
-          best out of both worlds
-        </p>
       </div>
     </section>
   );
