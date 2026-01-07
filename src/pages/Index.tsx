@@ -1,7 +1,8 @@
+import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
-import Projects from "@/components/Projects";
-import MyApproach from "@/components/MyApproach";
-import Education from "@/components/Education";
+import HowIWork from "@/components/HowIWork";
+import WhatIBuild from "@/components/WhatIBuild";
+import HowProjectsStart from "@/components/HowProjectsStart";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import CustomCursor from "@/components/CustomCursor";
@@ -10,12 +11,15 @@ const Index = () => {
   return (
     <main className="min-h-screen bg-background cursor-none">
       <CustomCursor />
-      <Hero />
-      <MyApproach />
-      <Projects />
-      <Education />
-      <Contact />
-      <Footer />
+      <Navigation />
+      <div className="pt-20">
+        <Hero />
+        <HowIWork />
+        <WhatIBuild />
+        <HowProjectsStart />
+        <Contact />
+        <Footer />
+      </div>
     </main>
   );
 };

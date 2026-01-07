@@ -1,105 +1,153 @@
-import { Mail, Copy, Check, ArrowUpRight } from "lucide-react";
-import ScrollReveal from "./ScrollReveal";
-import { SECTION_CONTAINER_CLASS, SECTION_PADDING_CLASS } from "@/lib/constants";
-import HeadingWithHover from "./HeadingWithHover";
-import photoImage from "@/assets/images/Kim_Sacher.jpg";
 import { useState } from "react";
+import ScrollReveal from "./ScrollReveal";
+import photoImage from "@/assets/images/Kim_Sacher.jpg";
+import { Mail } from "lucide-react";
 
 const Contact = () => {
-  const [copied, setCopied] = useState(false);
   const email = "kontakt@codeby.kim";
+  const [copied, setCopied] = useState(false);
 
-  const copyToClipboard = async () => {
-    try {
-      await navigator.clipboard.writeText(email);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    } catch (err) {
-      console.error("Failed to copy:", err);
-    }
+  const copyToClipboard = (e: React.MouseEvent) => {
+    e.preventDefault();
+    navigator.clipboard.writeText(email);
+    setCopied(true);
+    
+    // Dispatch custom event to update cursor
+    window.dispatchEvent(new CustomEvent('cursorTextChange', { detail: { text: 'copied' } }));
+    
+    setTimeout(() => {
+      setCopied(false);
+      window.dispatchEvent(new CustomEvent('cursorTextChange', { detail: { text: 'click' } }));
+    }, 2000);
   };
 
   return (
-    <section
-      id="contact"
-      className={`min-h-screen relative overflow-hidden bg-background ${SECTION_PADDING_CLASS}`}
-    >
-      <div className={SECTION_CONTAINER_CLASS}>
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Photo */}
-          <ScrollReveal>
-            <div className="aspect-[4/5] max-w-sm mx-auto md:mx-0 rounded-2xl border border-white/20 overflow-hidden">
-              <img
-                src={photoImage}
-                alt="Kim Sacher"
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </ScrollReveal>
-
-          {/* Contact info */}
-          <div>
-            <ScrollReveal delay={100}>
-              <HeadingWithHover className="heading-main text-foreground mb-6">
-                Contact.
-              </HeadingWithHover>
+    <>
+      {/* About Section */}
+      <section
+        id="about"
+        className="min-h-screen bg-background px-6 sm:px-12 md:px-16 lg:px-24 py-24 sm:py-32"
+      >
+        <div className="max-w-[1600px] mx-auto">
+          {/* Header */}
+          <div className="mb-24 sm:mb-32">
+            <ScrollReveal>
+              <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light text-foreground mb-8 leading-tight">
+                About.
+              </h2>
             </ScrollReveal>
-
-            <ScrollReveal delay={200}>
-              <p className="text-foreground/60 font-light text-sm leading-relaxed mb-6 max-w-md">
-                Got a project idea or a question? Feel free to reach out.
+            <ScrollReveal delay={100}>
+              <p className="text-xl sm:text-2xl md:text-3xl font-normal text-foreground max-w-3xl">
+                Some context behind how I work.
               </p>
             </ScrollReveal>
+          </div>
 
-            <ScrollReveal delay={300}>
-              <div className="space-y-4">
-                {/* Email row */}
-                <div className="rounded-2xl border border-white/20 bg-white/5 px-5 py-4">
-                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-                    <a
-                      href={`mailto:${email}`}
-                      className="group flex items-center gap-3 text-foreground font-light"
-                    >
-                      <span className="inline-flex items-center justify-center w-9 h-9 rounded-xl border border-white/20 bg-white/5">
-                        <Mail className="w-4 h-4 text-foreground/80" />
-                      </span>
-
-                      <span className="flex flex-col">
-                        <span className="text-xs tracking-[0.15em] uppercase text-foreground/50">
-                          Email
-                        </span>
-                        <span className="text-sm text-foreground/90 group-hover:text-primary transition-colors">
-                          {email}
-                        </span>
-                      </span>
-                    </a>
-
-                    <button
-                      onClick={copyToClipboard}
-                      className="inline-flex items-center gap-2 px-3 py-2 rounded-xl border border-white/20 text-xs text-foreground/70 hover:text-foreground hover:border-white/40 transition-all"
-                      aria-label="Copy email address"
-                      type="button"
-                    >
-                      {copied ? (
-                        <>
-                          <Check className="w-4 h-4" />
-                          Copied
-                        </>
-                      ) : (
-                        <>
-                          <Copy className="w-4 h-4" />
-                          Copy
-                        </>
-                      )}
-                    </button>
+          {/* Two column layout - same as hero */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">
+            {/* Left: Text content */}
+            <ScrollReveal delay={200}>
+              <div className="space-y-10">
+                <div>
+                  <h3 className="text-xl sm:text-2xl font-light text-foreground mb-4">
+                    Where it comes from
+                  </h3>
+                  <div className="space-y-4">
+                    <p className="text-base sm:text-lg font-normal text-foreground leading-relaxed">
+                      I've been drawn to making things for as long as I can remember.
+                      Art was always part of that — first intuitively, later more deliberately.
+                    </p>
+                    <p className="text-base sm:text-lg font-normal text-foreground leading-relaxed">
+                      At the same time, I was equally fascinated by structure.
+                      Math gave me a different kind of satisfaction: clarity, logic, and precision.
+                    </p>
+                    <p className="text-base sm:text-lg font-normal text-foreground leading-relaxed">
+                      Over time, I realized that I wasn't interested in choosing one over the other.
+                      I was interested in the space where both meet.
+                    </p>
                   </div>
+                </div>
+
+                <div>
+                  <h3 className="text-xl sm:text-2xl font-light text-foreground mb-4">
+                    Between structure and intuition
+                  </h3>
+                  <div className="space-y-4">
+                    <p className="text-base sm:text-lg font-normal text-foreground leading-relaxed">
+                      Studying informatics and design felt natural because it allowed me to work in that overlap.
+                      To think logically, but build things that people actually interact with.
+                    </p>
+                    <p className="text-base sm:text-lg font-normal text-foreground leading-relaxed">
+                      One thing I've learned along the way is that good work often means letting go.
+                      Ideas that once felt right sometimes don't hold up — and that's part of the process.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </ScrollReveal>
+
+            {/* Right: Image & Education */}
+            <ScrollReveal delay={300}>
+              <div className="space-y-10">
+                <div className="aspect-[3/4] w-full max-w-sm overflow-hidden">
+                  <img
+                    src={photoImage}
+                    alt="Kim Sacher"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div className="border-t border-foreground/10 pt-8 space-y-4 max-w-sm">
+                  <p className="text-base font-normal text-foreground/70">
+                    Bachelor of Science — Media Informatics
+                  </p>
+                  <p className="text-base font-normal text-foreground/60">
+                    Ludwig Maximilian University of Munich
+                  </p>
                 </div>
               </div>
             </ScrollReveal>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {/* Contact Section */}
+      <section
+        id="contact"
+        data-cursor-emoji="📧"
+        className="min-h-[60vh] bg-background px-6 sm:px-12 md:px-16 lg:px-24 py-24 sm:py-32 border-t border-foreground/10"
+      >
+        <div className="max-w-[1600px] mx-auto">
+          <ScrollReveal>
+            <div className="mb-16">
+              <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light text-foreground mb-8 leading-tight">
+                Contact.
+              </h2>
+              <p className="text-xl sm:text-2xl md:text-3xl font-normal text-foreground max-w-3xl">
+                If any of this resonates, feel free to get in touch.
+              </p>
+            </div>
+
+            <div className="space-y-8">
+              <div className="group relative inline-block">
+                <button
+                  onClick={copyToClipboard}
+                  data-cursor-text={copied ? "copied" : "click"}
+                  className="inline-flex items-center gap-3 text-2xl sm:text-3xl font-light text-foreground hover:text-foreground/70 transition-colors duration-300 cursor-pointer bg-transparent border-none p-0"
+                >
+                  <Mail className="w-6 h-6" strokeWidth={1.5} />
+                  <span>{email}</span>
+                </button>
+              </div>
+
+              <p className="text-base sm:text-lg font-normal text-foreground/60 mt-8">
+                Based in Munich, Germany — Working with clients worldwide
+              </p>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+    </>
   );
 };
 

@@ -1,47 +1,50 @@
-import { Button } from "./ui/button";
-import { scrollToElementById } from "@/lib/scroll";
-import { SECTION_CONTAINER_CLASS } from "@/lib/constants";
-import HeadingWithHover from "./HeadingWithHover";
-
 const Hero = () => {
-  const scrollToContact = () => {
-    scrollToElementById("contact");
-  };
-
   return (
-    <section className="min-h-screen relative overflow-hidden bg-background px-8 py-16">
-      {/* Animated gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-primary/5" />
-      <div className="absolute inset-0 bg-gradient-to-tl from-background via-transparent to-primary/3 opacity-50" />
-
-      {/* Decorative elements */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl opacity-30 animate-pulse" style={{ animationDuration: '8s' }} />
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl opacity-20 animate-pulse" style={{ animationDuration: '10s', animationDelay: '2s' }} />
-
-      {/* Navigation */}
-      <nav className="relative z-10 flex justify-end animate-fade-in mb-16">
-        <span className="text-foreground/60 text-sm tracking-widest uppercase">codeby.kim</span>
-      </nav>
-
-      {/* Main content */}
-      <div className={`relative z-10 ${SECTION_CONTAINER_CLASS}`}>
-        <div className="flex min-h-[calc(100vh-8rem)] items-center justify-end">
-          {/* Hero content - right aligned */}
-          <div className="flex flex-col items-end justify-center text-right max-w-2xl">
-            <HeadingWithHover className="heading-main text-foreground mb-6">
+    <section 
+      id="hero" 
+      className="h-screen bg-background px-6 sm:px-12 md:px-16 lg:px-24 pt-32 pb-12 flex flex-col justify-center"
+    >
+      {/* Main hero grid - two columns on desktop */}
+      <div className="max-w-[1600px] mx-auto w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 mb-20 lg:mb-32">
+          {/* Left: Name - HEADER SIZE */}
+          <div>
+            <h1 className="text-6xl sm:text-7xl lg:text-8xl font-light text-foreground leading-none tracking-tight">
               Kim Sacher
-            </HeadingWithHover>
-            <p className="text-2xl md:text-3xl font-light text-foreground/70 tracking-wide mb-12 animate-fade-in leading-relaxed" style={{ animationDelay: '0.2s', animationFillMode: 'both' }}>
-              Software Engineering & Interface Design
+            </h1>
+          </div>
+
+          {/* Right: Description - SUBHEADER SIZE */}
+          <div className="space-y-6">
+            <div className="text-5xl sm:text-6xl lg:text-7xl text-foreground leading-tight">
+              <span className="font-bold" style={{ fontFamily: '"Hiragino Kaku Gothic StdN", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif' }}>Software Engineering & Interface Design</span>
+            </div>
+            <div className="text-5xl sm:text-6xl lg:text-7xl text-foreground leading-tight">
+              <span className="font-light" style={{ fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif' }}>specialized in </span>
+              <span className="font-bold" style={{ fontFamily: '"Hiragino Kaku Gothic StdN", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif' }}>websites</span>
+              <span className="font-light" style={{ fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif' }}> and </span>
+              <span className="font-bold" style={{ fontFamily: '"Hiragino Kaku Gothic StdN", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif' }}>digital systems</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom: Two info blocks - TEXT SIZE */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">
+          {/* Left block */}
+          <div>
+            <p className="text-lg sm:text-xl font-normal text-foreground leading-relaxed">
+              I design and build digital solutions that feel clear, structured, and reliable. 
+              Always with a focus on usability, thoughtful detail, and creating work that connects 
+              people to systems in a meaningful way.
             </p>
-            <Button
-              variant="outline"
-              onClick={scrollToContact}
-              className="rounded-full px-10 py-6 text-xs tracking-[0.15em] uppercase border-foreground/30 hover:border-primary hover:text-primary animate-fade-in transition-all duration-300 hover:scale-105"
-              style={{ animationDelay: '0.4s', animationFillMode: 'both' }}
-            >
-              Contact
-            </Button>
+          </div>
+
+          {/* Right block */}
+          <div>
+            <p className="text-lg sm:text-xl font-normal text-foreground leading-relaxed">
+              Based in Munich, currently working with clients across Europe, 
+              helping individuals and companies bring clarity to their digital presence.
+            </p>
           </div>
         </div>
       </div>

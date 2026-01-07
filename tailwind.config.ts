@@ -28,6 +28,14 @@ export default {
 				ring: 'hsl(var(--ring))',
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
+				beige: {
+					DEFAULT: '#F5F3ED',
+					50: '#F5F3ED',
+					100: '#F5F3ED',
+				},
+				black: {
+					DEFAULT: '#000000',
+				},
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
 					foreground: 'hsl(var(--primary-foreground))'

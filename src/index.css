@@ -7,94 +7,135 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/* ============================================
+   GLOBAL COLOR CONFIGURATION
+   ============================================
+   
+   ÄNDERE HIER ALLE FARBEN FÜR DIE GESAMTE WEBSITE!
+   
+   Einfach die Hex-Farben unten ändern und die Website verwendet automatisch
+   die neuen Farben.
 */
 
+/* ============================================
+   FARBEN DEFINIEREN (Hex-Werte)
+   ============================================ */
+:root {
+  /* Hauptfarben */
+  --color-light-hex: #EBEBEB;        /* Light gray background */
+  --color-dark-hex: #1a1a1a;         /* Dark gray/black text */
+}
+
+/* ============================================
+   HSL KONVERTIERUNG (automatisch berechnet)
+   ============================================ */
+:root {
+  /* Light: #EBEBEB */
+  --color-light-hsl: 0 0% 92%;
+  --color-light-rgb: 235, 235, 235;
+  
+  /* Dark: #1a1a1a */
+  --color-dark-hsl: 0 0% 10%;
+  --color-dark-rgb: 26, 26, 26;
+}
+
+/* ============================================
+   LIGHT MODE (Standard)
+   ============================================ */
 @layer base {
   :root {
-    --background: 210 13% 8%;
-    --foreground: 0 0% 95%;
+    --background: var(--color-light-hsl);
+    --foreground: var(--color-dark-hsl);
 
-    --card: 210 13% 10%;
-    --card-foreground: 0 0% 95%;
+    --card: var(--color-light-hsl);
+    --card-foreground: var(--color-dark-hsl);
 
-    --popover: 210 13% 10%;
-    --popover-foreground: 0 0% 95%;
+    --popover: var(--color-light-hsl);
+    --popover-foreground: var(--color-dark-hsl);
 
-    --primary: 0 70% 55%;
-    --primary-foreground: 0 0% 95%;
+    /* "primary" is our ink color (dark in light mode) */
+    --primary: var(--color-dark-hsl);
+    --primary-rgb: var(--color-dark-rgb);
+    --primary-foreground: var(--color-light-hsl);
 
-    --secondary: 210 13% 12%;
-    --secondary-foreground: 0 0% 95%;
+    --secondary: var(--color-light-hsl);
+    --secondary-foreground: var(--color-dark-hsl);
 
-    --muted: 210 13% 12%;
-    --muted-foreground: 0 0% 65%;
+    --muted: var(--color-light-hsl);
+    --muted-foreground: var(--color-dark-hsl);
 
-    --accent: 0 70% 55%;
-    --accent-foreground: 0 0% 95%;
+    /* "accent" matches primary */
+    --accent: var(--color-dark-hsl);
+    --accent-foreground: var(--color-light-hsl);
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 95%;
+    --destructive: var(--color-dark-hsl);
+    --destructive-foreground: var(--color-light-hsl);
 
-    --border: 0 0% 25%;
-    --input: 0 0% 15%;
-    --ring: 0 70% 55%;
+    --border: var(--color-dark-hsl);
+    --input: var(--color-dark-hsl);
+    --ring: var(--color-dark-hsl);
 
     --radius: 1.5rem;
 
     /* Portfolio specific design tokens */
-    --gradient-primary: linear-gradient(135deg, hsl(0 70% 55%), hsl(0 70% 65%));
-    --gradient-subtle: linear-gradient(180deg, hsl(210 13% 8%), hsl(210 13% 12%));
-    --glow-primary: 0 0 30px hsl(0 70% 55% / 0.3);
+    --gradient-primary: linear-gradient(135deg, hsl(var(--foreground) / 0.95), hsl(var(--foreground) / 0.75));
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(var(--background)));
+    --glow-primary: 0 0 30px hsl(var(--foreground) / 0.15);
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 0 70% 55%;
+    --sidebar-background: var(--color-light-hsl);
+    --sidebar-foreground: var(--color-dark-hsl);
+    --sidebar-primary: var(--color-dark-hsl);
+    --sidebar-primary-foreground: var(--color-light-hsl);
+    --sidebar-accent: var(--color-light-hsl);
+    --sidebar-accent-foreground: var(--color-dark-hsl);
+    --sidebar-border: var(--color-dark-hsl);
+    --sidebar-ring: var(--color-dark-hsl);
   }
 
+  /* ============================================
+     DARK MODE
+     ============================================ */
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 0 0% 8%;
+    --foreground: var(--color-light-hsl);
+    --primary-rgb: var(--color-light-rgb);
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 0 0% 8%;
+    --card-foreground: var(--color-light-hsl);
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 0 0% 8%;
+    --popover-foreground: var(--color-light-hsl);
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    /* "primary" is our ink color (light in dark mode) */
+    --primary: var(--color-light-hsl);
+    --primary-foreground: 0 0% 8%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 0 0% 8%;
+    --secondary-foreground: var(--color-light-hsl);
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 0 0% 8%;
+    --muted-foreground: var(--color-light-hsl);
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    /* "accent" matches primary */
+    --accent: var(--color-light-hsl);
+    --accent-foreground: 0 0% 8%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: var(--color-light-hsl);
+    --destructive-foreground: var(--color-light-hsl);
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: var(--color-light-hsl);
+    --input: var(--color-light-hsl);
+    --ring: var(--color-light-hsl);
+
+    --sidebar-background: 0 0% 8%;
+    --sidebar-foreground: var(--color-light-hsl);
+    --sidebar-primary: var(--color-light-hsl);
+    --sidebar-primary-foreground: 0 0% 8%;
+    --sidebar-accent: 0 0% 8%;
+    --sidebar-accent-foreground: var(--color-light-hsl);
+    --sidebar-border: var(--color-light-hsl);
+    --sidebar-ring: var(--color-light-hsl);
   }
 }
 
@@ -103,8 +144,17 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  html {
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
   body {
     @apply bg-background text-foreground font-sans;
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    text-size-adjust: 100%;
   }
 
   h1, h2 {
@@ -136,6 +186,37 @@ All colors MUST be HSL.
   }
 }
 
+@keyframes arrowDown {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translateY(6px);
+    opacity: 0.7;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 /* Heading hover effect - clean and minimal */
 .heading-hover-effect {
   display: inline-block;
@@ -159,9 +240,22 @@ All colors MUST be HSL.
 }
 @layer components {
   .heading-main {
-    @apply text-5xl md:text-6xl lg:text-7xl 
+    @apply text-3xl sm:text-5xl md:text-6xl lg:text-7xl 
            font-extralight 
            tracking-tight 
            leading-none;
+  }
+  
+  /* Globale Text-Styles */
+  .text-subheading {
+    font-size: 20px;
+    line-height: 1.4;
+    font-weight: 300;
+  }
+  
+  .text-body {
+    font-size: 15px;
+    line-height: 1.625;
+    font-weight: 300;
   }
 }

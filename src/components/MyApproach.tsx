@@ -10,10 +10,10 @@ const MyApproach = () => {
   };
 
   return (
-    <section className={`min-h-screen relative overflow-hidden bg-background ${SECTION_PADDING_CLASS}`}>
+    <section id="approach" className={`min-h-screen relative overflow-hidden bg-background ${SECTION_PADDING_CLASS}`}>
       <div className={SECTION_CONTAINER_CLASS}>
         {/* Header */}
-        <div className="mb-24">
+        <div className="mb-12 sm:mb-24">
           <ScrollReveal>
             <HeadingWithHover className="heading-main text-foreground mb-6">
               My Approach.
@@ -29,8 +29,8 @@ const MyApproach = () => {
 
         {/* Standalone Projects End-to-End */}
         <ScrollReveal delay={200}>
-          <div className="mb-24">
-            <p className="text-2xl md:text-3xl font-light text-foreground mb-8 border-b border-foreground/20 pb-4">
+          <div className="mb-12 sm:mb-24">
+            <p className="text-xl sm:text-2xl md:text-3xl font-light text-foreground mb-6 sm:mb-8 border-b border-foreground/20 pb-4">
               Standalone Projects End-to-End
             </p>
 
@@ -57,12 +57,12 @@ const MyApproach = () => {
         </ScrollReveal>
 
         {/* Horizontal separator */}
-        <div className="border-t border-foreground/20 w-full mb-24"></div>
+        <div className="border-t border-foreground/20 w-full mb-12 sm:mb-24"></div>
 
         {/* Team Collaboration */}
         <ScrollReveal delay={300}>
-          <div className="mb-24">
-            <p className="text-2xl md:text-3xl font-light text-foreground mb-8 border-b border-foreground/20 pb-4">
+          <div className="mb-12 sm:mb-24">
+            <p className="text-xl sm:text-2xl md:text-3xl font-light text-foreground mb-6 sm:mb-8 border-b border-foreground/20 pb-4">
               Team Collaboration
             </p>
 
@@ -90,7 +90,7 @@ const MyApproach = () => {
 
         {/* CTA */}
         <ScrollReveal delay={400}>
-          <div className="mt-24 text-center">
+          <div className="mt-12 sm:mt-24 text-center">
             <p className="text-foreground/60 font-light text-sm mb-8 leading-relaxed">
               Still not sure if it fits? Just contact me and we're very happy to talk about it!
             </p>
