@@ -30,7 +30,7 @@ const MyApproach = () => {
         {/* Standalone Projects End-to-End */}
         <ScrollReveal delay={200}>
           <div className="mb-12 sm:mb-24">
-            <p className="text-xl sm:text-2xl md:text-3xl font-light text-foreground mb-6 sm:mb-8 border-b border-foreground/20 pb-4">
+            <p className="text-lg sm:text-xl md:text-2xl font-light text-foreground mb-6 sm:mb-8 border-b border-foreground/20 pb-4">
               Standalone Projects End-to-End
             </p>
 
@@ -62,7 +62,7 @@ const MyApproach = () => {
         {/* Team Collaboration */}
         <ScrollReveal delay={300}>
           <div className="mb-12 sm:mb-24">
-            <p className="text-xl sm:text-2xl md:text-3xl font-light text-foreground mb-6 sm:mb-8 border-b border-foreground/20 pb-4">
+            <p className="text-lg sm:text-xl md:text-2xl font-light text-foreground mb-6 sm:mb-8 border-b border-foreground/20 pb-4">
               Team Collaboration
             </p>
 

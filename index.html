@@ -21,6 +21,23 @@
   </head>
 
   <body>
+    <script>
+      // Initialize theme to light mode before React loads to prevent flash
+      (function() {
+        const savedTheme = localStorage.getItem('theme');
+        // Only apply dark mode if explicitly saved
+        if (savedTheme === 'dark') {
+          document.documentElement.classList.add('dark');
+        } else {
+          // Ensure light mode (remove dark class if it exists)
+          document.documentElement.classList.remove('dark');
+          // Set default to light if no theme is saved
+          if (!savedTheme) {
+            localStorage.setItem('theme', 'light');
+          }
+        }
+      })();
+    </script>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

@@ -16,7 +16,7 @@ const HowProjectsStart = () => {
         {/* Header */}
         <div className="mb-24 sm:mb-32">
           <ScrollReveal>
-            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light text-foreground mb-8 leading-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light text-foreground mb-8 leading-tight">
               How projects often start.
             </h2>
           </ScrollReveal>

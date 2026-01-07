@@ -25,12 +25,12 @@ const HowIWork = () => {
         {/* Header */}
         <div className="mb-24 sm:mb-32">
           <ScrollReveal>
-            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light text-foreground mb-8 leading-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light text-foreground mb-8 leading-tight">
               How I work.
             </h2>
           </ScrollReveal>
           <ScrollReveal delay={100}>
-            <p className="text-xl sm:text-2xl md:text-3xl font-normal text-foreground max-w-3xl">
+            <p className="text-lg sm:text-xl md:text-2xl font-normal text-foreground max-w-3xl">
               I keep projects clear, focused, and moving.
             </p>
           </ScrollReveal>
@@ -41,13 +41,13 @@ const HowIWork = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16 lg:gap-20">
             {steps.map((step) => (
               <div key={step.title}>
-                <div className="text-5xl sm:text-6xl font-extralight text-foreground/30 mb-6">
+                <div className="text-4xl sm:text-5xl font-extralight text-foreground/30 mb-6">
                   {step.number}
                 </div>
-                <h3 className="text-xl sm:text-2xl font-light text-foreground mb-4">
+                <h3 className="text-lg sm:text-xl font-light text-foreground mb-4">
                   {step.title}
                 </h3>
-                <p className="text-base sm:text-lg font-normal text-foreground leading-relaxed">
+                <p className="text-sm sm:text-base font-normal text-foreground leading-relaxed">
                   {step.description}
                 </p>
               </div>
@@ -58,7 +58,7 @@ const HowIWork = () => {
         {/* Footer Note */}
         <ScrollReveal delay={300}>
           <div className="border-t border-foreground/10 pt-12 mt-24 sm:mt-32">
-            <p className="text-base sm:text-lg font-normal text-foreground/70">
+            <p className="text-sm sm:text-base font-normal text-foreground/70">
               I work independently or within existing teams — depending on what fits best.
             </p>
           </div>

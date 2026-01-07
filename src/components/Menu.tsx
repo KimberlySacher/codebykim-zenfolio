@@ -79,7 +79,7 @@ const Menu = () => {
               <button
                 key={item.label}
                 onClick={item.action}
-                className="text-4xl sm:text-5xl md:text-6xl font-extralight text-foreground hover:opacity-70 transition-all duration-300 transform hover:scale-105"
+                className="text-3xl sm:text-4xl md:text-5xl font-extralight text-foreground hover:opacity-70 transition-all duration-300 transform hover:scale-105"
                 style={{
                   fontFamily: '"Hiragino Kaku Gothic StdN", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
                   animationDelay: `${index * 0.1}s`,

@@ -32,12 +32,12 @@ const Contact = () => {
           {/* Header */}
           <div className="mb-24 sm:mb-32">
             <ScrollReveal>
-              <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light text-foreground mb-8 leading-tight">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light text-foreground mb-8 leading-tight">
                 About.
               </h2>
             </ScrollReveal>
             <ScrollReveal delay={100}>
-              <p className="text-xl sm:text-2xl md:text-3xl font-normal text-foreground max-w-3xl">
+              <p className="text-lg sm:text-xl md:text-2xl font-normal text-foreground max-w-3xl">
                 Some context behind how I work.
               </p>
             </ScrollReveal>
@@ -49,19 +49,19 @@ const Contact = () => {
             <ScrollReveal delay={200}>
               <div className="space-y-10">
                 <div>
-                  <h3 className="text-xl sm:text-2xl font-light text-foreground mb-4">
+                  <h3 className="text-lg sm:text-xl font-light text-foreground mb-4">
                     Where it comes from
                   </h3>
                   <div className="space-y-4">
-                    <p className="text-base sm:text-lg font-normal text-foreground leading-relaxed">
+                    <p className="text-sm sm:text-base font-normal text-foreground leading-relaxed">
                       I've been drawn to making things for as long as I can remember.
                       Art was always part of that — first intuitively, later more deliberately.
                     </p>
-                    <p className="text-base sm:text-lg font-normal text-foreground leading-relaxed">
+                    <p className="text-sm sm:text-base font-normal text-foreground leading-relaxed">
                       At the same time, I was equally fascinated by structure.
                       Math gave me a different kind of satisfaction: clarity, logic, and precision.
                     </p>
-                    <p className="text-base sm:text-lg font-normal text-foreground leading-relaxed">
+                    <p className="text-sm sm:text-base font-normal text-foreground leading-relaxed">
                       Over time, I realized that I wasn't interested in choosing one over the other.
                       I was interested in the space where both meet.
                     </p>
@@ -69,15 +69,15 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <h3 className="text-xl sm:text-2xl font-light text-foreground mb-4">
+                  <h3 className="text-lg sm:text-xl font-light text-foreground mb-4">
                     Between structure and intuition
                   </h3>
                   <div className="space-y-4">
-                    <p className="text-base sm:text-lg font-normal text-foreground leading-relaxed">
+                    <p className="text-sm sm:text-base font-normal text-foreground leading-relaxed">
                       Studying informatics and design felt natural because it allowed me to work in that overlap.
                       To think logically, but build things that people actually interact with.
                     </p>
-                    <p className="text-base sm:text-lg font-normal text-foreground leading-relaxed">
+                    <p className="text-sm sm:text-base font-normal text-foreground leading-relaxed">
                       One thing I've learned along the way is that good work often means letting go.
                       Ideas that once felt right sometimes don't hold up — and that's part of the process.
                     </p>
@@ -120,10 +120,10 @@ const Contact = () => {
         <div className="max-w-[1600px] mx-auto">
           <ScrollReveal>
             <div className="mb-16">
-              <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light text-foreground mb-8 leading-tight">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light text-foreground mb-8 leading-tight">
                 Contact.
               </h2>
-              <p className="text-xl sm:text-2xl md:text-3xl font-normal text-foreground max-w-3xl">
+              <p className="text-lg sm:text-xl md:text-2xl font-normal text-foreground max-w-3xl">
                 If any of this resonates, feel free to get in touch.
               </p>
             </div>
@@ -133,14 +133,14 @@ const Contact = () => {
                 <button
                   onClick={copyToClipboard}
                   data-cursor-text={copied ? "copied" : "click"}
-                  className="inline-flex items-center gap-3 text-2xl sm:text-3xl font-light text-foreground hover:text-foreground/70 transition-colors duration-300 cursor-pointer bg-transparent border-none p-0"
+                  className="inline-flex items-center gap-3 text-xl sm:text-2xl font-light text-foreground hover:text-foreground/70 transition-colors duration-300 cursor-pointer bg-transparent border-none p-0"
                 >
-                  <Mail className="w-6 h-6" strokeWidth={1.5} />
+                  <Mail className="w-5 h-5" strokeWidth={1.5} />
                   <span>{email}</span>
                 </button>
               </div>
 
-              <p className="text-base sm:text-lg font-normal text-foreground/60 mt-8">
+              <p className="text-sm sm:text-base font-normal text-foreground/60 mt-8">
                 Based in Munich, Germany — Working with clients worldwide
               </p>
             </div>
