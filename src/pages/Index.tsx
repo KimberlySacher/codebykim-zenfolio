@@ -11,8 +11,8 @@ const Index = () => {
     <main className="min-h-screen bg-background cursor-none">
       <CustomCursor />
       <Hero />
-      <Projects />
       <MyApproach />
+      <Projects />
       <Education />
       <Contact />
       <Footer />
